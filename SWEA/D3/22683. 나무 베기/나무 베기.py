@@ -15,9 +15,14 @@ dy = [0, 1, 0, -1]
 # 현재위치 (x,y), 현재방향(d) 조작횟수(cnt), 나무자른횟수(cut)
 def dfs(x, y, d, cnt, cut):
     global min_cnt
+
+    if cnt >= min_cnt:
+        return
+
     # 할 일
     if arr[x][y] == 'Y':
         min_cnt = min(min_cnt, cnt)
+        return
 
     # 방문 체크
     visited[x][y] = True
@@ -41,7 +46,7 @@ def dfs(x, y, d, cnt, cut):
                 dfs(nx, ny, i, cnt + change, cut)
             elif arr[nx][ny] == 'T' and cut < K:
                 dfs(nx, ny, i, cnt + change, cut+1)
-                
+
     visited[x][y] = False
 
 
