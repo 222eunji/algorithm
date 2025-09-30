@@ -1,3 +1,5 @@
+import sys;
+input = sys.stdin.readline
 
 N = int(input())
 # 초기값 설정
@@ -12,5 +14,3 @@ for _ in range(N-1):
         x0, y0 = x, y   # 초기화
 length += (y0-x0)   # 마지막 값 더해주기
 print(length)
-
-
