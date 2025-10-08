@@ -2,27 +2,22 @@ import sys;
 input = sys.stdin.readline
 
 N = int(input())
-col = [0] * (N+2)
-rd_cross = [0] * (N*2)
-ld_cross = [0] * (N*2)
-ans = 0
+c = [False] * (N+1)
+rd_cross = [False] * (2*N)
+ld_cross = [False] * (2*N)
+result = 0
 
 def recur(row):
-    global ans
-
+    global result
     if row == N:
-        ans += 1
-        return
-    for i in range(1, N+1):
-        if col[i] == 1 or rd_cross[row-i+N] == 1 or ld_cross[row+i] == 1:
+        result += 1
+
+    for col in range(1, N+1):
+        if c[col] or rd_cross[col+row] or ld_cross[col-row+N-1]:
             continue
-        col[i] = 1
-        rd_cross[row-i+N] = 1
-        ld_cross[row+i] = 1
+        c[col] = rd_cross[col+row] = ld_cross[col-row+N-1] = True
         recur(row+1)
-        col[i] = 0
-        rd_cross[row-i+N] = 0
-        ld_cross[row+i] = 0
+        c[col] = rd_cross[col+row] = ld_cross[col-row+N-1] = False
 
 recur(0)
-print(ans)
+print(result)
