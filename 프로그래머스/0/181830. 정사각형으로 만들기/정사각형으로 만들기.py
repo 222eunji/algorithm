@@ -2,11 +2,6 @@ def solution(arr):
     row_len = len(arr)
     col_len = len(arr[0])
     
-    temp = [1, 2, 3]
-    new = temp + [0] * 2
-    print([0] * 5)
-    print(new)
-    
     if row_len == col_len:
         return arr
     elif row_len > col_len:
