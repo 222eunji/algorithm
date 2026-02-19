@@ -1,4 +1,4 @@
-# [level 3] 대장균의 크기에 따라 분류하기 1 - 299307 
+# [level 3] 대장균의 크기에 따라 분류하기 1 - 299307   
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/299307) 
 
@@ -20,7 +20,7 @@
 
 ### 문제 설명
 
-<p>대장균들은 일정 주기로 분화하며, 분화를 시작한 개체를 부모 개체, 분화가 되어 나온 개체를 자식 개체라고 합니다.<br>
+<p>대장균들은 일정 주기로 분화하며, 분화를 시작한 개체를 부모 개체, 분화가 되어 나온 개체를 자식 개체라고 합니다!<br>
 다음은 실험실에서 배양한 대장균들의 정보를 담은 <code>ECOLI_DATA</code> 테이블입니다. <code>ECOLI_DATA</code> 테이블의 구조는 다음과 같으며,  <code>ID</code>, <code>PARENT_ID</code>, <code>SIZE_OF_COLONY</code>, <code>DIFFERENTIATION_DATE</code>, <code>GENOTYPE</code> 은 각각 대장균 개체의 ID, 부모 개체의 ID, 개체의 크기, 분화되어 나온 날짜, 개체의 형질을 나타냅니다.</p>
 <table class="table">
         <thead><tr>
