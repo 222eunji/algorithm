@@ -1,8 +1,12 @@
-n = int(input())
-array = list(map(int, input().split()))
+import sys
+input = sys.stdin.readline
 
-d = [0] * n
-d[0] = array[0]
+n =  int(input())
+nums = list(map(int, input().split()))
+dp = [-1000] * n
+
+dp[0] = nums[0]
 for i in range(1, n):
-    d[i] = max(array[i], d[i-1]+array[i])
-print(max(d))
+    dp[i] = max(dp[i-1]+nums[i], nums[i])
+
+print(max(dp))
