@@ -1,27 +1,31 @@
-
-import sys;
-sys.setrecursionlimit(10**6)
+import sys
 input = sys.stdin.readline
 
-def dfs(node):
-    visited[node] = True
-
-    for next_node in graph[node]:
-        if not visited[next_node]:
-            dfs(next_node)
-
 N, M = map(int, input().split())
+
 graph = [[] for _ in range(N+1)]
-for i in range(M):
+for _ in range(M):
     u, v = map(int, input().split())
     graph[u].append(v)
     graph[v].append(u)
 
 visited = [False] * (N+1)
+
+def bfs(start):
+    q = [start]
+    visited[start] = True
+    while q:
+        v = q.pop(0)
+        for nxt in graph[v]:
+            if not visited[nxt]:
+                visited[nxt] = True
+                q.append(nxt)
+
 cnt = 0
-for i in range(1, N+1):
-    if not visited[i]:
-        dfs(i)
-        cnt += 1
+for n in range(1, N+1):
+    if not visited[n]:
+        cnt += 1 
+        bfs(n)
 
 print(cnt)
+
