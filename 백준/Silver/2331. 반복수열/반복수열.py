@@ -1,26 +1,23 @@
-import sys
-input = sys.stdin.readline
+n, m = map(int, input().split())
+check = [0] * 236197  # 9 ** 5 + 9 ** 5 + 9 ** 5 + 9 ** 5 최대 인덱스의 값이기 때문
+iteration = 1
 
-A, P = map(int, input().split())
-seq = [A]
 
-idx = 0
-while True:
-  num = seq[idx]
-  v = 0
-  # 다음 값 구하기
-  while num > 0:
-    v += (num%10)**P
-    num //= 10
+def cal(a, b):
+    result = 0
+    for i in str(a):
+        result += pow(int(i), b)
+    return result
 
-  # 반복 확인하기
-  repeat = -1
-  for i in range(len(seq)):
-    if v == seq[i]:
-      repeat = i
-  if repeat != -1:
-    print(repeat)
-    break
-  seq.append(v)
-  idx += 1
 
+def dfs(n, m, iteration, check):
+    if check[n] != 0:
+        return check[n] - 1
+
+    check[n] = iteration
+    iteration += 1
+    result = cal(n, m)
+    return dfs(result, m, iteration, check)
+
+
+print(dfs(n, m, iteration, check))
