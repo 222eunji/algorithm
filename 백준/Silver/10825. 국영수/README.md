@@ -1,4 +1,4 @@
-# [Silver IV] 국영수 - 10825 
+# [Silver IV] 국영수 - 10825 풀이
 
 [문제 링크](https://www.acmicpc.net/problem/10825) 
 
