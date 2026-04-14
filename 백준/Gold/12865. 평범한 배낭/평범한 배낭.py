@@ -4,7 +4,6 @@ input = sys.stdin.readline
 N, K = map(int, input().split())
 bag = [list(map(int, input().split())) for _ in range(N)]
 dp = [[0]*(K+1) for _ in range(N+1)]
-#DP표는 0~K+1, 0~N+1로 구성하자 (N=1일 때, DP[i-1][j]가 존재해야 하므로)
 
 for i in range(1,N+1):
     for j in range(1,K+1):
