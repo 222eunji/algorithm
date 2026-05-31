@@ -1,0 +1,1 @@
+def solution(my, alp):return my.replace(alp,alp.upper()) 
